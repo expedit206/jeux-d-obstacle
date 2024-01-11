@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>obstcle</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+}
+.sol{
+    width: 12%;
+height: 2vh;
+background-color: green;
+margin: 0px 10px;
+position: fixed;
+}
+.marquee{
+    display: flex;
+    width: 100%;
+    background-color: black;
+    margin-top: 89vh;
+    position: relative;
+}
+
+.velo{
+    width: 12vw;
+    height: 30vh;
+    position: absolute;
+    top: 60vh;
+    /* background-color: black; */
+    position: absolute;
+}
+.tronc{
+    position: absolute;
+    width: 12vw;
+    height: 25vh;
+    top: 71vh;
+left: 75vw;
+}
+
+
+
+        .zero{
+            margin-left: -4%;
+        }
+        .one{
+            margin-left: 9%;
+        }
+        .two{
+            margin-left: 22%;
+        }
+        .three{
+            margin-left: 35%;
+        }
+        .four{
+            margin-left: 48.2%;
+        }
+        .five{
+            margin-left: 61.5%;
+        }
+        .six{
+            margin-left: 74.7%;
+        }
+        .seven{
+            margin-left: 88%;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/velf.gif" alt="" class="velo">
+    <img src="./img/tronce.png" alt="" class="tronc">
+
+
+<div class="marquee">
+        <div class="sol zero"></div>
+         <div class="sol one"></div>
+       <div class="sol two"></div>
+        <div class="sol three"></div>
+      <div class="sol four"></div>
+       <div class="sol five"></div>
+        <div class="sol six"></div> 
+          <div class="sol seven"></div>
+    </div>
+    <!-- <marquee behavior="" direction="right" scrollamount="50" scrolldelay="100" class="second">
+        <div class="sol"></div>
+        <div class="sol"></div>
+        <div class="sol"></div>
+        <div class="sol"></div>
+        <div class="sol"></div>
+        <div class="sol"></div>
+        <div class="sol"></div>
+    </marquee> -->
+
+
+
+
+<script>
+    a=document.querySelector('.a')
+marquee=document.querySelectorAll('.marquee')
+sols=document.querySelectorAll('.sol')
+velo=document.querySelector('.velo')
+tronc=document.querySelector('.tronc')
+pos=63
+postronc=75
+
+/****tronc */
+document.addEventListener("click",()=>{
+intervalle_tronc=setInterval(()=>{
+    tronc.style.left=postronc+'vw'
+    postronc--
+    if(postronc==-20){
+        // alert('fgd')
+        postronc=99
+        tronc.style.left=postronc+'vw'
+    }
+
+    /***perdu ou gagner */
+    if(postronc==0){if(pos>=48){
+        // alert('perdu')
+        pos=63
+        postronc=75
+        tronc.style.left=75+'vw'
+        velo.style.top=60+'vh'
+        clearInterval(intervalle_tronc)
+        clearInterval(intervalle_sol)
+        clearInterval(intervalle_velo)
+}}
+    /**fin perdu ou gagner */
+
+},23)
+
+})
+/**finc tronc */
+
+/**velo */
+document.addEventListener("keydown",(e)=>{
+ 
+    let verif
+    a=0
+    if(e.key=='Up'){
+
+     if(pos==63){
+        intervalle_velo=setInterval(()=>{
+            if(pos>=63 || pos<42){    
+                verif=true
+            }
+            else if(pos==42){
+                verif=false
+            }
+        
+            /****** */
+            if( verif==false){
+                velo.style.top=pos+'vh'
+                pos++
+        
+        
+        }
+        /****** */
+        
+        if(verif==true){
+        
+                pos--
+            velo.style.top=pos+'vh'
+         
+            }
+            if(a>=40){
+                clearInterval(intervalle_velo)
+                pos=63
+            }
+            a++
+        
+        },23)
+     }
+        
+
+     else{
+        //  alert('non')
+         velo.style.top=63+'vh'
+         pos=63
+        clearInterval(id)
+     }
+}
+        
+    })
+/**fin velo */
+
+
+document.addEventListener("click",()=>{
+posZero=0
+    posOne=0
+    posTwo=0
+    posThree=0
+    posFour=0
+    posFive=0
+    posSix=0
+    posSeven=0
+    intervalle_sol=setInterval(()=>{
+
+       // zero
+        {
+        if(posZero<-5){
+            posZero=100
+            // sols[0].style.visibility="hidden"
+        }
+        sols[0].style.left=posZero + 'vw';
+        posZero=posZero-0.5
+      
+        }
+
+        //one
+        {   
+            
+                if(posOne<-20){
+                    posOne=85.2
+                }
+                sols[1].style.left=posOne +'vw';
+                posOne=posOne-0.5
+              
+                }
+        
+
+        // two
+         {   
+            
+                if(posTwo<-30){
+                    posTwo=75
+                }
+                sols[2].style.left=posTwo + 'vw';
+                posTwo=posTwo-0.5
+              
+                
+        }
+        //three
+        {
+            
+            
+                if(posThree<-43){
+                    posThree=62
+                }
+                sols[3].style.left=posThree + 'vw';
+                posThree=posThree-0.5
+              
+                
+          
+        }
+
+        //four
+        {   
+            
+                if(posFour<-58){
+                    posFour=47
+                }
+                sols[4].style.left=posFour + 'vw';
+                posFour=posFour-0.5
+              
+                
+        }
+
+     //five
+{  
+            
+                if(posFive<-69){
+                    posFive=36
+                }
+                sols[5].style.left=posFive + 'vw';
+                posFive=posFive-0.5
+              
+                }
+                
+                //six
+                {
+                    if(posSix<-87){
+                        posSix=18
+                    }
+                    sols[6].style.left=posSix + 'vw';
+                    posSix=posSix-0.5
+                }
+//         // seven
+
+      {
+        if(posSeven<-93){
+            posSeven=12
+        }
+        sols[7].style.left=posSeven + 'vw';
+        posSeven=posSeven-0.5
+      
+        }
+    },18);
+    })
+</script></body>
+</html>

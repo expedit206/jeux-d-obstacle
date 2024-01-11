@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.sol{
+    width: 12%;
+height: 2vh;
+background-color: green;
+margin: 0px 10px;
+position: fixed;
+}
+.marquee{
+    display: flex;
+    width: 100%;
+    background-color: black;
+    margin-top: 89vh;
+    position: relative;
+}
+
+    .number_score{
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5vw;
+        height: 7.8vh;
+        font-size: 3vw;
+        left: 12vw;
+           top: 3vh;
+        position: absolute;
+        background-color: rgb(198, 198, 238);
+        border: 1px cyan ridge;
+       }
+      
+.velo{
+    width: 12vw;
+    height: 30vh;
+    position: absolute;
+    top: 0vh;
+    /* background-color: black; */
+    position: absolute;
+    transition: 2s ease;
+}
+.tronc{
+    position: absolute;
+    width: 12vw;
+    height: 25vh;
+    top: -10vh;
+left: 88vw;
+transition: 1s ease;
+}
+.start{
+    transition: 3s ease;
+    position: absolute;
+    font-size: 10vw;
+    font-weight: bold;
+    border-radius: 50px;
+    width: 30vw;
+    height: 22vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(35, 214, 116);
+    box-shadow: rgba(35, 59, 45, 0.815) 5px 5px;
+    border:1px brown dashed;
+    top: -20vh;
+    left: 30vh;
+}
+.start:hover{
+    width: 29.8vw;
+    height: 21.5vh;
+cursor: pointer;
+}
+
+.gold_two{
+left: 120vw;
+}
+.gold_one{
+left: 100vw;
+}
+.gold{
+    position: absolute;
+    top: 77vh;
+    width: 6vw;
+    height: 8vh;
+}

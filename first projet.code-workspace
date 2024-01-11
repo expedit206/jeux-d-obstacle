@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../first projet"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "site nourriture"
+	}
+}
